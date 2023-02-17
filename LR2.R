@@ -13,6 +13,15 @@ sapply(na.omit(df[, num_idx]), min)
 means <- sapply(na.omit(df[, num_idx]), mean)
 means
 
+# №2. Подсчитать количество людей, отдавших предпочтение >0.7 и <0.3
+more_than_7 <- integer(length(num_idx))
+less_than_3 <- integer(length(num_idx))
+
+more_than_7 <- sapply(df[, num_idx], function(x) length(which(x > 7)))
+less_than_3 <- sapply(df[, num_idx], function(x) length(which(x < 3)))
+more_than_7
+less_than_3
+
 # №3. Рейтинг жанров по убыванию
 idxes <- order(means, decreasing=T)
 idxes <- sapply(idxes, function (x) x <- colnames(df)[x + 2])
