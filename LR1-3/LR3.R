@@ -4,6 +4,7 @@ df <- read.csv("Любимый жанр музыки.csv", sep=";", header=T,
 
 df[15, ] <- df[16, ]
 df <- df[-c(16), ]
+df <- df[-c(13), ]
 
 library(readxl)
 test_data <- read_excel("test.xls", sheet = "test"); test_data
@@ -39,3 +40,11 @@ mean(Синтвейв)
 median(Синтвейв)
 
 detach(syntwave_more_than_5)
+
+
+
+
+
+
+
+
