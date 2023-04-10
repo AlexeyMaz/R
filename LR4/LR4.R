@@ -42,7 +42,7 @@ par(mfrow=c(1,1))
 plot(prize_pl_m, type="b", pch=21, col="blue", xaxt="n", ylim=c(0,7), xlab="Год",
      main="Призовые места Румынии по академической гребле за последние 30 лет")
 lines(prize_pl_f, type="o", pch=21, col="hotpink")
-legend(min(prize_pl_m$Year), 7, c("Мужчины", "Женщины"), fill=c("blue", "hotpink"))
+legend('topright', c("Мужчины", "Женщины"), fill=c("blue", "hotpink"))
 axis(side=1, at=prize_pl_m$Year)
 
 
@@ -62,8 +62,7 @@ lines(last6_gold$Год, last6_gold$Нидерланды, type="o", pch=18, col=
 lines(last6_gold$Год, last6_gold$Испания, type="o", pch=18, col=pl_col[6])
 lines(last6_gold$Год, last6_gold$Беларусь, type="o", pch=18, col=pl_col[7])
 axis(side=1, at=last6_gold$Год)
-legend(max(last6_gold$Год) - 1.5, 41.5, cex = 0.55,
-       colnames(last6_gold)[-1], fill=pl_col)
+legend('topright', cex = 0.5, colnames(last6_gold)[-1], fill=pl_col)
 
 
 last6_prize <- read_excel("LR4_prize.xlsx")
@@ -79,7 +78,7 @@ lines(last6_prize$Год, last6_prize$Нидерланды, type="o", pch=18, co
 lines(last6_prize$Год, last6_prize$Испания, type="o", pch=18, col=pl_col[6])
 lines(last6_prize$Год, last6_prize$Беларусь, type="o", pch=18, col=pl_col[7])
 axis(side=1, at=last6_prize$Год)
-legend(max(last6_prize$Год) - 1.5, 104, cex = 0.55,
+legend('topright', cex = 0.45,
        colnames(last6_prize)[-1], fill=pl_col)
 
 
@@ -91,7 +90,7 @@ plot(last6_m, type="b", pch=18, col="blue", xaxt="n", ylim=c(0,3),
      xlab="Год проведения олимпиады", ylab="Количество призовых мест",
      main="Динамика изменения кол-ва призовых мест Румынии\nпо академической гребле за последние 6 олимпиад")
 lines(last6_f, type="o", pch=18, col="hotpink")
-legend(max(last6_f$Year) - 10.4, 3.12, cex=0.7 ,c("Мужчины", "Женщины"), fill=c("blue", "hotpink"))
+legend('topright', cex=0.7 ,c("Мужчины", "Женщины"), fill=c("blue", "hotpink"))
 axis(side=1, at=last6_m$Year)
 
 
