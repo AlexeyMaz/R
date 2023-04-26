@@ -58,8 +58,8 @@ rm(tmp)
 
 df_clust <- df[, -c(1:9)]
 df_clust <- na.omit(df_clust)
-df_deaths <- df_clust
 df_clust <- df_clust[, -4]
+df_deaths <- df_clust
 
 maxs <- apply(df_clust, 2, max)
 mins <- apply(df_clust, 2, min)
@@ -77,11 +77,11 @@ clusters <- cutree(clust.crashes, k = 5)
 df_deaths <- data.frame(df_deaths, clusters)
 
 
-library(cluster)
-library(factoextra)
-
-# метод локтя
-fviz_nbclust(df_clust[1:3], kmeans, method = 'wss')
+# library(cluster)
+# library(factoextra)
+# 
+# # метод локтя
+# fviz_nbclust(df_clust[1:3], kmeans, method = 'wss')
 
 
 # каменная осыпь
