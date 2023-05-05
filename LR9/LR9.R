@@ -1,4 +1,4 @@
-setwd("C:/Users/AlmaZ/RStudioProjects/R/LR8")
+setwd("C:/Users/AlmaZ/RStudioProjects/R/LR9")
 N = 6
 G_size = sample((N + 10) : (I((N / 10 + 5)^2) + 5 * N), 1)
 
@@ -76,3 +76,22 @@ plot(g1, edge.arrow.size = .2, vertex.size = 10, layout = layout.grid)
 diameter(g1)
 all_shortest_paths(g1, N, to = V(g1), mode = c("out", "all", "in"),weights = NULL)
 plot(g1, vertex.size=deg*10)
+
+
+
+# 7
+edges <-c(1,2, 1,3, 4,5)
+N = 5; M = 2
+g2 <- graph(edges, n=N, directed = F)
+plot(g2)
+
+print(bipartite.mapping(g2)$res)
+V(g2)$type <- bipartite.mapping(g2)$type # - указали, что это двудольный граф
+V(g2)$color <- c("green", "red")[V(g2)$type + 1] 
+plot(g2, layout=layout.bipartite)
+
+green <- V(g2)[color == "green"]
+print(green)
+
+red <- V(g2)[color == "red"]
+print(red)
